@@ -3,4 +3,25 @@ body {
     background-color: #f5f5f5;
     color: #333;
     padding: 40px;
+#slideshow {
+    width: 900px;   /* make it bigger */
+    max-width: 100%; /* prevent overflow on small screens */
+    display: block;
+    margin: 20px auto; /* center it */
+}
+.slideshow-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#slideshow1, #slideshow2 {
+    width: 48%;        /* each takes half the screen */
+    max-width: 48%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: contain;
+}
+
 }
