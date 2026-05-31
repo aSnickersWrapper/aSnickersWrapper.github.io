@@ -1,10 +1,15 @@
 /* CLICKER PHONE */
 const clickable = document.getElementById("clickable");
 
+// Create ONE audio object (no overlap)
+const sfx = new Audio("jp3.mp3");
+
 clickable.addEventListener("click", () => {
-    // Overlapping sound
-    const sfx = new Audio("jp3.mp3");
-    sfx.play();
+    // Only play if not already playing
+    if (sfx.paused) {
+        sfx.currentTime = 0;
+        sfx.play();
+    }
 
     triggerShake();
 });
