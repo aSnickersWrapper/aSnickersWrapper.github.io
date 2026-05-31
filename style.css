@@ -17,21 +17,21 @@ h1 {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding: 20px;
+    padding: 10%;
     box-sizing: border-box;
-    gap: 20px;
+    gap: 10%;
 }
 
 /* Each slideshow gets half the screen */
 .slideshow-wrapper {
     width: 50%;
-    height: 400px;          /* ← change this to adjust height */
+    height: 50%;          /* ← change this to adjust height */
     overflow: hidden;       /* prevents overflow */
     display: flex;
     justify-content: center;
     align-items: center;
     background: white;
-    border-radius: 10px;
+    border-radius: 5%;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
