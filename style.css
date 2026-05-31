@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #196635 0%, #2fae6e 100%);
+    background: #196635;   /* solid green background */
     text-align: center;
     color: white;
 }
