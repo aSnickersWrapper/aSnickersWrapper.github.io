@@ -1,6 +1,6 @@
 window.onload = function() {
 
-    // Slideshow 1
+    // --- Slideshow 1 ---
     let index1 = 0;
     const track1 = document.getElementById("track1");
     const slides1 = track1.children.length;
@@ -13,7 +13,7 @@ window.onload = function() {
     setInterval(slide1, 2000);
 
 
-    // Slideshow 2
+    // --- Slideshow 2 ---
     let index2 = 0;
     const track2 = document.getElementById("track2");
     const slides2 = track2.children.length;
