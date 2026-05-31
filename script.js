@@ -1,15 +1,18 @@
 const clickable = document.getElementById("clickable");
-const sfx = new Audio("jp3.mp3"); // single audio instance
+const overlay = document.getElementById("bg-overlay");
+
+// Single audio instance (no overlap)
+const sfx = new Audio("jp3.mp3");
 
 clickable.addEventListener("click", () => {
-    // play sound only if not already playing
+    // Play sound only if not already playing
     if (sfx.paused) {
         sfx.currentTime = 0;
         sfx.play();
     }
 
     triggerShake();
-    changeBackground();
+    triggerDinoEffect();
 });
 
 /* SHAKE EFFECT */
@@ -18,14 +21,21 @@ function triggerShake() {
     setTimeout(() => clickable.classList.remove("shake"), 250);
 }
 
-/* BACKGROUND FADE EFFECT */
-function changeBackground() {
-    document.body.style.backgroundImage = "url('spino.png')"; // your uploaded dinosaur image
-    document.body.classList.add("fade-bg");
+/* DINOSAUR BACKGROUND + PHONE FALL */
+function triggerDinoEffect() {
+    // Set dinosaur image
+    overlay.style.backgroundImage = "url('spino.png')";
 
+    // Fade in
+    overlay.style.opacity = "1";
+
+    // Phone falls to bottom + rotates
+    clickable.classList.add("phone-fall");
+
+    // After 2 seconds fade out + reset phone
     setTimeout(() => {
-        document.body.style.backgroundImage = "none";
-        document.body.classList.remove("fade-bg");
+        overlay.style.opacity = "0";
+        clickable.classList.remove("phone-fall");
     }, 2000);
 }
 
