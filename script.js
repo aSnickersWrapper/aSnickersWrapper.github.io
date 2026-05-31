@@ -1,17 +1,11 @@
-/* CLICKER GAME */
-let score = 0;
+/* CLICKER PHONE */
 const clickable = document.getElementById("clickable");
-const scoreDisplay = document.getElementById("score");
 
 clickable.addEventListener("click", () => {
-    score++;
-    scoreDisplay.textContent = `Clicks: ${score}`;
-
     // Overlapping sound
     const sfx = new Audio("jp3.mp3");
     sfx.play();
 
-    spawnParticles();
     triggerShake();
 });
 
@@ -19,32 +13,6 @@ clickable.addEventListener("click", () => {
 function triggerShake() {
     clickable.classList.add("shake");
     setTimeout(() => clickable.classList.remove("shake"), 250);
-}
-
-/* YELLOW PARTICLES AROUND PHONE */
-function spawnParticles() {
-    const rect = clickable.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-
-    for (let i = 0; i < 12; i++) {
-        const p = document.createElement("div");
-        p.classList.add("particle");
-
-        const angle = Math.random() * Math.PI * 2;
-        const distance = 40 + Math.random() * 40;
-
-        const x = Math.cos(angle) * distance;
-        const y = Math.sin(angle) * distance;
-
-        p.style.left = `${centerX}px`;
-        p.style.top = `${centerY}px`;
-        p.style.transform = `translate(${x}px, ${y}px)`;
-
-        document.body.appendChild(p);
-
-        setTimeout(() => p.remove(), 600);
-    }
 }
 
 /* SLIDESHOW 1 */
