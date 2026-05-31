@@ -1,23 +1,32 @@
-/* CLICKER PHONE */
 const clickable = document.getElementById("clickable");
-
-// Create ONE audio object (no overlap)
-const sfx = new Audio("jp3.mp3");
+const sfx = new Audio("jp3.mp3"); // single audio instance
 
 clickable.addEventListener("click", () => {
-    // Only play if not already playing
+    // play sound only if not already playing
     if (sfx.paused) {
         sfx.currentTime = 0;
         sfx.play();
     }
 
     triggerShake();
+    changeBackground();
 });
 
 /* SHAKE EFFECT */
 function triggerShake() {
     clickable.classList.add("shake");
     setTimeout(() => clickable.classList.remove("shake"), 250);
+}
+
+/* BACKGROUND FADE EFFECT */
+function changeBackground() {
+    document.body.style.backgroundImage = "url('spino.png')"; // your uploaded dinosaur image
+    document.body.classList.add("fade-bg");
+
+    setTimeout(() => {
+        document.body.style.backgroundImage = "none";
+        document.body.classList.remove("fade-bg");
+    }, 2000);
 }
 
 /* SLIDESHOW 1 */

@@ -1,11 +1,13 @@
-/* GLOBAL PAGE STYLE */
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background: #196635; /* solid green */
+    background: #196635;
     text-align: center;
     color: white;
+    transition: background 1s ease, background-image 1s ease, opacity 1s ease;
+    background-size: cover;
+    background-position: center;
 }
 
 h1 {
@@ -47,16 +49,16 @@ h1 {
     box-shadow: 0 8px 25px rgba(0,0,0,0.35);
 }
 
-/* CLICKABLE PHONE — top-right, smaller, no box */
+/* PHONE — top-right, tiny, no box */
 #clickable {
-    width: 50px; /* even smaller */
+    width: 50px;
     position: fixed;
     top: 20px;
     right: 20px;
     cursor: pointer;
     transition: transform 0.1s ease;
     border-radius: 6px;
-    box-shadow: none; /* no box */
+    box-shadow: none;
     z-index: 10;
 }
 
@@ -71,4 +73,16 @@ h1 {
     50% { transform: translate(3px, -1px) rotate(3deg); }
     75% { transform: translate(-2px, 1px) rotate(-2deg); }
     100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+/* FADE EFFECT */
+.fade-bg {
+    animation: fadeInOut 2s ease forwards;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    25% { opacity: 1; }
+    75% { opacity: 1; }
+    100% { opacity: 0; }
 }
