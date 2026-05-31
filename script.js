@@ -1,27 +1,27 @@
 window.onload = function() {
 
-    // Slideshow 1 (images 1–4)
-    let images1 = ["img1.png", "img2.png", "img3.png", "img4.png"];
+    // Slideshow 1
     let index1 = 0;
-    const slideshow1 = document.getElementById("slideshow1");
+    const track1 = document.getElementById("track1");
+    const slides1 = track1.children.length;
 
-    function changeImage1() {
-        index1 = (index1 + 1) % images1.length;
-        slideshow1.src = images1[index1];
+    function slide1() {
+        index1 = (index1 + 1) % slides1;
+        track1.style.transform = `translateX(-${index1 * 100}%)`;
     }
 
-    setInterval(changeImage1, 2000);
+    setInterval(slide1, 2000);
 
 
-    // Slideshow 2 (images 5–11)
-    let images2 = ["img5.png", "img6.png", "img7.png", "img8.png", "img9.png", "img10.png", "img11.png"];
+    // Slideshow 2
     let index2 = 0;
-    const slideshow2 = document.getElementById("slideshow2");
+    const track2 = document.getElementById("track2");
+    const slides2 = track2.children.length;
 
-    function changeImage2() {
-        index2 = (index2 + 1) % images2.length;
-        slideshow2.src = images2[index2];
+    function slide2() {
+        index2 = (index2 + 1) % slides2;
+        track2.style.transform = `translateX(-${index2 * 100}%)`;
     }
 
-    setInterval(changeImage2, 2000);
+    setInterval(slide2, 2000);
 };
